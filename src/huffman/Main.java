@@ -13,5 +13,8 @@ public class Main {
         HuffmanNode root = HuffmanTreeBuilder.buildTree(freqMap);
         System.out.println(root.getFreq());
 
+        Map<Character, String> codes = HuffmanCodeGenerator.generateCodes(root);
+        System.out.println(codes);
+
     }
 }
