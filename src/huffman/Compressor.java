@@ -8,6 +8,11 @@ public class Compressor {
             throw new IllegalArgumentException("Input string cannot be null or empty");
         }
 
+        if (huffmanCodes.size() == 1) {
+            char onlyChar = huffmanCodes.keySet().iterator().next();
+            return "0".repeat(input.length());
+        }
+
         StringBuilder compressed = new StringBuilder();
         for(char c:input.toCharArray()){
             String code = huffmanCodes.get(c);

@@ -2,6 +2,10 @@ package huffman;
 
 public class Decompressor {
     public static String decompress(String compressedData, HuffmanNode root){
+        if (root.getLeft() == null && root.getRight() == null) {
+            return String.valueOf(root.getChar()).repeat(compressedData.length());
+        }
+
         if(compressedData == null || compressedData.isEmpty()){
             throw new IllegalArgumentException("Compressed data cannot be null or empty");
         }
