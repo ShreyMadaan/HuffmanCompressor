@@ -1,5 +1,7 @@
 package huffman;
 
+import org.w3c.dom.Node;
+
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -25,5 +27,19 @@ public class HuffmanTreeBuilder {
         }
         //Root of Huffman Tree
         return pq.poll();
+    }
+
+    public void serializeTree(HuffmanNode root, StringBuilder sb){
+        if(root == null){
+            return;
+        }
+        if (root.getLeft() == null && root.getRight() == null) {
+            sb.append("1").append(root.getChar());
+            return;
+        }
+
+        sb.append("0");
+        serializeTree(root.getLeft(), sb);
+        serializeTree(root.getRight(), sb);
     }
 }
