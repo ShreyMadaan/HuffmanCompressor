@@ -10,5 +10,8 @@ public class Main {
         String input = sc.nextLine();
         Map<Character,Integer>freqMap = FrequencyMapBuilder.buildFreqMap(input);
         System.out.println(freqMap);
+        HuffmanNode root = HuffmanTreeBuilder.buildTree(freqMap);
+        System.out.println(root.getFreq());
+
     }
 }

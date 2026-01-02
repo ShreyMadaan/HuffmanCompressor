@@ -1,10 +1,10 @@
 package huffman;
 
 public class HuffmanNode implements Comparable<HuffmanNode>{
-    char c;
-    int freq;
-    HuffmanNode left;
-    HuffmanNode right;
+    private char c;
+    private int freq;
+    private HuffmanNode left;
+    private HuffmanNode right;
 
     public HuffmanNode(char c, int freq){
         this.c = c;
@@ -14,10 +14,22 @@ public class HuffmanNode implements Comparable<HuffmanNode>{
         this.freq = freq;
         this.left = left;
         this.right = right;
+    }
 
+    public char getChar(){
+        return c;
+    }
+    public int getFreq(){
+        return freq;
+    }
+    public HuffmanNode getLeft(){
+        return left;
+    }
+    public HuffmanNode getRight(){
+        return right;
     }
     @Override
     public int compareTo(HuffmanNode other) {
-        return this.freq - other.freq;
+        return Integer.compare(this.freq, other.freq);
     }
 }
