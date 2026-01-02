@@ -15,6 +15,11 @@ public class Main {
 
         Map<Character, String> codes = HuffmanCodeGenerator.generateCodes(root);
         System.out.println(codes);
+        String compressed =
+                Compressor.compress(input, codes);
+
+        System.out.println("Compressed data:");
+        System.out.println(compressed);
 
     }
 }
