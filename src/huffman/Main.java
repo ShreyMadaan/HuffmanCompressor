@@ -20,6 +20,9 @@ public class Main {
 
         System.out.println("Compressed data:");
         System.out.println(compressed);
+        String decompressed = Decompressor.decompress(compressed, root);
+        System.out.println("Decompressed data:");
+        System.out.println(decompressed);
 
     }
 }
